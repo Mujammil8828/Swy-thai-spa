@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mujammil's Contact Details</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            padding: 20px;
+        }
+        
+        .contact-card {
+            width: 100%;
+            max-width: 400px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+        
+        .contact-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .card-header {
+            background: #2575fc;
+            color: white;
+            text-align: center;
+            padding: 25px 20px;
+        }
+        
+        .card-header h2 {
+            font-size: 1.8rem;
+            margin-bottom: 5px;
+        }
+        
+        .card-header p {
+            opacity: 0.9;
+        }
+        
+        .card-content {
+            padding: 25px;
+        }
+        
+        .detail-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            padding: 15px;
+            border-radius: 10px;
+            transition: background 0.3s;
+            cursor: pointer;
+        }
+        
+        .detail-item:hover {
+            background: #f5f9ff;
+        }
+        
+        .detail-item:active {
+            transform: scale(0.98);
+        }
+        
+        .icon {
+            width: 50px;
+            height: 50px;
+            background: #eaf2ff;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 15px;
+            color: #2575fc;
+            font-size: 1.2rem;
+        }
+        
+        .detail-content {
+            flex: 1;
+        }
+        
+        .detail-content h3 {
+            font-size: 0.9rem;
+            color: #777;
+            margin-bottom: 5px;
+        }
+        
+        .detail-content p {
+            font-size: 1.1rem;
+            color: #333;
+            font-weight: 500;
+        }
+        
+        .whatsapp-link {
+            color: #25D366;
+            text-decoration: none;
+        }
+        
+        .whatsapp-link:hover {
+            text-decoration: underline;
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 20px;
+            color: #777;
+            font-size: 0.9rem;
+            border-top: 1px solid #eee;
+        }
+        
+        @media (max-width: 480px) {
+            .contact-card {
+                max-width: 100%;
+            }
+            
+            .card-header h2 {
+                font-size: 1.5rem;
+            }
+            
+            .detail-item {
+                padding: 12px;
+            }
+            
+            .icon {
+                width: 45px;
+                height: 45px;
+                font-size: 1rem;
+            }
+            
+            .detail-content p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="contact-card">
+        <div class="card-header">
+            <h2>Mujammil Shaikh</h2>
+            <p>Contact Details</p>
+        </div>
+        
+        <div class="card-content">
+            <div class="detail-item">
+                <div class="icon">
+                    <i class="fas fa-user"></i>
+                </div>
+                <div class="detail-content">
+                    <h3>NAME</h3>
+                    <p>Mujammil Shaikh</p>
+                </div>
+            </div>
+            
+            <div class="detail-item" onclick="openWhatsApp()">
+                <div class="icon">
+                    <i class="fas fa-phone"></i>
+                </div>
+                <div class="detail-content">
+                    <h3>PHONE NUMBER</h3>
+                    <p class="whatsapp-link">8828214924</p>
+                </div>
+            </div>
+            
+            <div class="detail-item">
+                <div class="icon">
+                    <i class="fas fa-envelope"></i>
+                </div>
+                <div class="detail-content">
+                    <h3>EMAIL ADDRESS</h3>
+                    <p>Mujammil8828@gmail.com</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>Click on phone number to open WhatsApp</p>
+        </div>
+    </div>
+
+    <script>
+        function openWhatsApp() {
+            // Format the phone number for WhatsApp (remove any spaces or special characters)
+            const phoneNumber = "8828214924";
+            
+            // Create the WhatsApp link
+            const whatsappUrl = `https://wa.me/${phoneNumber}`;
+            
+            // Open WhatsApp in a new tab
+            window.open(whatsappUrl, '_blank');
+        }
+    </script>
+</body>
+</html>
