@@ -145,6 +145,29 @@ h6 {
   margin-top: -30px;
 }
 
+.new {
+   background-color: var(--theme-color1);
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: background 0.3s ease, transform 0.3s ease;
+    margin-left: 20px;
+    margin-top: 20px;
+  }
+
+  .new svg {
+    transition: transform 0.3s ease;
+  }
+
+  .new:hover svg {
+    transform: translateX(4px); /* arrow slide effect */
+  }
+
 h1 {
   font-size: 110px;
   font-weight: 700;
@@ -209,6 +232,7 @@ h5 {
   font-size: 20px;
   font-weight: 500;
   line-height: 30px;
+  margin-left: 15px;
 }
 
 h6 {
@@ -221,6 +245,7 @@ p {
   margin: 0;
   padding: 0;
   font-size: 16px;
+  /* margin-left: 20px; */
   /* line-height: 29px; */
 }
 
@@ -1045,6 +1070,10 @@ figure {
   padding-top: 115px;
 }
 
+.pb-10{
+ padding-top: 1px;
+}
+
 .pt-120 {
   padding-top: 120px;
 }
@@ -1054,7 +1083,7 @@ figure {
 }
 
 .pt-130 {
-  padding-top: 130px;
+      padding-top: 60px;
 }
 
 .pt-135 {
@@ -1214,7 +1243,7 @@ figure {
 }
 
 .pb-130 {
-  padding-bottom: 130px;
+  padding-bottom: 70px;
 }
 
 .pb-135 {
@@ -2097,6 +2126,7 @@ figure {
   gap: 10px;
   text-transform: capitalize;
   color: black;
+  margin-left: 15px;
 }
 
 .section-header .title,
@@ -2107,7 +2137,7 @@ figure {
 .section-header .text,
 .section-header__flex .text {
   margin-top: 10px;
-  margin-left: 6px;
+  margin-left: 20px;
 }
 
 .section-header.center,
