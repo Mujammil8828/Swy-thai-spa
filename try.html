@@ -3,411 +3,292 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Luxury Massage Therapy Pricing</title>
+    <title>Contact Information - Swy Thai Spa</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Poppins', sans-serif;
         }
         
         body {
-            background: linear-gradient(135deg, #e6f7ff 0%, #f5f0ff 100%);
-            min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #f8f3e9 0%, #f5e5d1 100%);
             padding: 20px;
         }
         
-        .container {
+        .contact-container {
             width: 100%;
-            max-width: 900px;
-            text-align: center;
-        }
-        
-        .header {
-            margin-bottom: 30px;
-        }
-        
-        .header h1 {
-            font-size: 2.8rem;
-            color: #4a2c82;
-            margin-bottom: 10px;
-            font-weight: 700;
-        }
-        
-        .header p {
-            color: #6c757d;
-            font-size: 1.1rem;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-        
-        .pricing-card {
-            background: linear-gradient(to bottom, #ffffff 0%, #f8f9fa 100%);
+            max-width: 1000px;
+            background: white;
             border-radius: 20px;
             box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
             overflow: hidden;
-            transition: transform 0.3s ease;
+            display: flex;
+            flex-wrap: wrap;
         }
         
-        .pricing-card:hover {
-            transform: translateY(-5px);
-        }
-        
-        .card-header {
-            background: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);
+        .contact-left {
+            flex: 1;
+            min-width: 300px;
+            background: linear-gradient(135deg, #2c3e50 0%, #4a6572 100%);
             color: white;
-            padding: 25px 20px;
+            padding: 50px 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .contact-right {
+            flex: 1;
+            min-width: 300px;
+            padding: 50px 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .section-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 30px;
+            color: #2c3e50;
             position: relative;
         }
         
-        .card-header h2 {
-            font-size: 2.2rem;
-            margin-bottom: 15px;
+        .section-title:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -10px;
+            width: 60px;
+            height: 4px;
+            background: #d4af37;
+            border-radius: 2px;
+        }
+        
+        .contact-left .section-title {
+            color: white;
+        }
+        
+        .contact-left .section-title:after {
+            background: #d4af37;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 30px;
+        }
+        
+        .contact-icon {
+            width: 60px;
+            height: 60px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 20px;
+            color: #d4af37;
+            font-size: 1.5rem;
+        }
+        
+        .contact-details {
+            flex: 1;
+        }
+        
+        .contact-details h3 {
+            font-size: 1.4rem;
+            margin-bottom: 8px;
             font-weight: 600;
         }
         
-        .card-header::after {
-            content: '';
-            position: absolute;
-            bottom: -20px;
-            left: 0;
-            width: 100%;
-            height: 40px;
-            background: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);
-            clip-path: polygon(0 0, 100% 0, 100% 20%, 50% 100%, 0 20%);
-            opacity: 0.7;
+        .contact-details p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            opacity: 0.9;
         }
         
-        .duration-tabs {
-            display: flex;
-            justify-content: center;
-            background-color: rgba(255, 255, 255, 0.15);
-            border-radius: 50px;
-            margin: 20px auto;
-            padding: 5px;
-            max-width: 500px;
-        }
-        
-        .duration-tab {
-            padding: 12px 20px;
-            border-radius: 50px;
-            font-weight: 500;
-            cursor: pointer;
+        .contact-link {
+            color: white;
+            text-decoration: none;
             transition: all 0.3s ease;
-            flex: 1;
-            text-align: center;
+            display: inline-block;
+            margin-top: 5px;
         }
         
-        .duration-tab.active {
-            background-color: white;
-            color: #6a11cb;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        .contact-link:hover {
+            color: #d4af37;
+            transform: translateX(5px);
         }
         
-        .card-body {
-            padding: 40px 30px 30px;
+        .highlight {
+            color: #d4af37;
+            font-weight: 600;
         }
         
-        .service {
+        .opening-hours {
+            background: #f8f3e9;
+            padding: 25px;
+            border-radius: 15px;
+            margin-top: 20px;
+            border-left: 4px solid #d4af37;
+        }
+        
+        .opening-hours h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+        
+        .opening-hours p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #4a6572;
+        }
+        
+        .hours-list {
+            list-style: none;
+            margin-top: 15px;
+        }
+        
+        .hours-list li {
             display: flex;
-            margin-bottom: 25px;
-            padding-bottom: 25px;
-            border-bottom: 1px dashed #e0e0e0;
-            align-items: center;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px dashed #d4af37;
         }
         
-        .service:last-child {
-            margin-bottom: 0;
-            padding-bottom: 0;
+        .hours-list li:last-child {
             border-bottom: none;
         }
         
-        .service-icon {
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-right: 20px;
-            flex-shrink: 0;
-        }
-        
-        .service-icon i {
-            font-size: 24px;
-            color: white;
-        }
-        
-        .service-details {
-            flex-grow: 1;
-            text-align: left;
-        }
-        
-        .service-name {
-            font-size: 1.4rem;
-            font-weight: 600;
-            color: #333;
-            margin-bottom: 5px;
-        }
-        
-        .service-desc {
-            color: #6c757d;
-            font-size: 0.95rem;
-            margin-bottom: 10px;
-        }
-        
-        .prices {
-            display: flex;
-            justify-content: space-between;
-            background-color: #f8f9fa;
-            border-radius: 10px;
-            padding: 15px;
-        }
-        
-        .price-option {
-            flex: 1;
-            padding: 10px;
-        }
-        
-        .price-option.active {
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-        }
-        
-        .duration {
-            font-size: 0.9rem;
-            color: #6c757d;
-            margin-bottom: 5px;
-        }
-        
-        .price {
-            font-weight: 700;
-            font-size: 1.3rem;
-            color: #333;
-        }
-        
-        .special .price {
-            color: #6a11cb;
-        }
-        
-        .price small {
-            font-size: 0.9rem;
-            font-weight: 500;
-        }
-        
-        .footer {
-            margin-top: 30px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .note {
-            color: #6c757d;
-            font-style: italic;
-            text-align: left;
-            font-size: 0.9rem;
-        }
-        
-        .btn-book {
-            background: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);
-            color: white;
-            border: none;
-            padding: 12px 25px;
-            border-radius: 50px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 5px 15px rgba(106, 17, 203, 0.3);
-        }
-        
-        .btn-book:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(106, 17, 203, 0.4);
-        }
-        
         @media (max-width: 768px) {
-            .service {
+            .contact-container {
+                flex-direction: column;
+            }
+            
+            .contact-left, .contact-right {
+                padding: 40px 30px;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .contact-icon {
+                width: 50px;
+                height: 50px;
+                font-size: 1.2rem;
+            }
+            
+            .contact-details h3 {
+                font-size: 1.2rem;
+            }
+            
+            .contact-details p {
+                font-size: 1rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .contact-left, .contact-right {
+                padding: 30px 20px;
+            }
+            
+            .contact-item {
                 flex-direction: column;
                 text-align: center;
             }
             
-            .service-icon {
+            .contact-icon {
                 margin-right: 0;
                 margin-bottom: 15px;
+                align-self: center;
             }
             
-            .service-details {
+            .section-title {
                 text-align: center;
             }
             
-            .prices {
-                flex-direction: column;
-            }
-            
-            .price-option {
-                margin-bottom: 10px;
-            }
-            
-            .price-option:last-child {
-                margin-bottom: 0;
-            }
-            
-            .footer {
-                flex-direction: column;
-            }
-            
-            .note {
-                margin-bottom: 15px;
-                text-align: center;
+            .section-title:after {
+                left: 50%;
+                transform: translateX(-50%);
             }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <h1>Luxury Massage Therapy</h1>
-            <p>Indulge in our premium massage treatments designed to rejuvenate your body and mind</p>
-        </div>
-        
-        <div class="pricing-card">
-            <div class="card-header">
-                <h2>Treatment Packages</h2>
-                <div class="duration-tabs">
-                    <div class="duration-tab active" data-duration="60">60 Min</div>
-                    <div class="duration-tab" data-duration="90">90 Min</div>
-                    <div class="duration-tab" data-duration="120">120 Min</div>
+    <div class="contact-container">
+        <div class="contact-left">
+            <h2 class="section-title">Get in Touch</h2>
+            
+            <div class="contact-item">
+                <div class="contact-icon">
+                    <i class="fas fa-phone"></i>
+                </div>
+                <div class="contact-details">
+                    <h3>Have any question?</h3>
+                    <p>Call us at <a href="tel:+919136944442" class="contact-link">+91 9136944442</a></p>
                 </div>
             </div>
             
-            <div class="card-body">
-                <div class="service">
-                    <div class="service-icon">
-                        <i class="fas fa-spa"></i>
-                    </div>
-                    <div class="service-details">
-                        <h3 class="service-name">Foot Massage</h3>
-                        <p class="service-desc">Relaxing foot massage that relieves tension and improves circulation</p>
-                        <div class="prices">
-                            <div class="price-option" data-duration="60">
-                                <div class="duration">60 Minutes</div>
-                                <div class="price">1500/-</div>
-                            </div>
-                            <div class="price-option" data-duration="90">
-                                <div class="duration">90 Minutes</div>
-                                <div class="price">2000/-</div>
-                            </div>
-                            <div class="price-option" data-duration="120">
-                                <div class="duration">120 Minutes</div>
-                                <div class="price">2500/-</div>
-                            </div>
-                        </div>
-                    </div>
+            <div class="contact-item">
+                <div class="contact-icon">
+                    <i class="fas fa-envelope"></i>
                 </div>
-                
-                <div class="service special">
-                    <div class="service-icon">
-                        <i class="fas fa-gift"></i>
-                    </div>
-                    <div class="service-details">
-                        <h3 class="service-name">Special Offers</h3>
-                        <p class="service-desc">Limited time special packages for our valued customers</p>
-                        <div class="prices">
-                            <div class="price-option" data-duration="60">
-                                <div class="duration">60 Minutes</div>
-                                <div class="price">1300/-</div>
-                            </div>
-                            <div class="price-option" data-duration="90">
-                                <div class="duration">90 Minutes</div>
-                                <div class="price">1600/-</div>
-                            </div>
-                            <div class="price-option" data-duration="120">
-                                <div class="duration">120 Minutes</div>
-                                <div class="price">2000/-</div>
-                            </div>
-                        </div>
-                    </div>
+                <div class="contact-details">
+                    <h3>Write email</h3>
+                    <p><a href="mailto:swythaispa1819@gmail.com" class="contact-link">swythaispa1819@gmail.com</a></p>
                 </div>
-                
-                <div class="footer">
-                    <p class="note">* Prices include all taxes. Free consultation included with every session.</p>
-                    <button class="btn-book">Book Now</button>
+            </div>
+        </div>
+        
+        <div class="contact-right">
+            <h2 class="section-title">Visit Us</h2>
+            
+            <div class="contact-item">
+                <div class="contact-icon">
+                    <i class="fas fa-clock"></i>
                 </div>
+                <div class="contact-details">
+                    <h3>Visit anytime</h3>
+                    <p>Your wellness journey doesn't wait – and neither do we.<br>Come anytime!</p>
+                </div>
+            </div>
+            
+            <div class="opening-hours">
+                <h3>Our Opening Hours</h3>
+                <p>We're here to serve you throughout the week</p>
+                <ul class="hours-list">
+                    <li><span>Monday - Friday:</span> <span class="highlight">9:00 AM - 9:00 PM</span></li>
+                    <li><span>Saturday:</span> <span class="highlight">10:00 AM - 8:00 PM</span></li>
+                    <li><span>Sunday:</span> <span class="highlight">10:00 AM - 6:00 PM</span></li>
+                </ul>
             </div>
         </div>
     </div>
 
     <script>
+        // Simple animation for contact items
         document.addEventListener('DOMContentLoaded', function() {
-            const durationTabs = document.querySelectorAll('.duration-tab');
-            const priceOptions = document.querySelectorAll('.price-option');
+            const contactItems = document.querySelectorAll('.contact-item');
             
-            // Set first price option as active by default
-            document.querySelectorAll('.prices').forEach(priceContainer => {
-                const firstOption = priceContainer.querySelector('.price-option');
-                if (firstOption) firstOption.classList.add('active');
-            });
-            
-            // Duration tab selection
-            durationTabs.forEach(tab => {
-                tab.addEventListener('click', function() {
-                    const duration = this.getAttribute('data-duration');
-                    
-                    // Update active tab
-                    durationTabs.forEach(t => t.classList.remove('active'));
-                    this.classList.add('active');
-                    
-                    // Update active price option for each service
-                    document.querySelectorAll('.prices').forEach(priceContainer => {
-                        const options = priceContainer.querySelectorAll('.price-option');
-                        options.forEach(option => {
-                            option.classList.remove('active');
-                            if (option.getAttribute('data-duration') === duration) {
-                                option.classList.add('active');
-                            }
-                        });
-                    });
-                });
-            });
-            
-            // Price option selection
-            priceOptions.forEach(option => {
-                option.addEventListener('click', function() {
-                    const duration = this.getAttribute('data-duration');
-                    const parent = this.closest('.prices');
-                    
-                    // Update active option within the same service
-                    parent.querySelectorAll('.price-option').forEach(opt => {
-                        opt.classList.remove('active');
-                    });
-                    this.classList.add('active');
-                    
-                    // Update duration tabs
-                    durationTabs.forEach(tab => {
-                        tab.classList.remove('active');
-                        if (tab.getAttribute('data-duration') === duration) {
-                            tab.classList.add('active');
-                        }
-                    });
-                });
-            });
-            
-            // Book button animation
-            const bookBtn = document.querySelector('.btn-book');
-            bookBtn.addEventListener('click', function() {
-                this.textContent = 'Booking...';
+            contactItems.forEach((item, index) => {
+                item.style.opacity = '0';
+                item.style.transform = 'translateY(20px)';
+                
                 setTimeout(() => {
-                    this.textContent = 'Book Now';
-                    alert('Thank you for your interest! In a real application, this would redirect to a booking page.');
-                }, 1500);
+                    item.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                    item.style.opacity = '1';
+                    item.style.transform = 'translateY(0)';
+                }, 200 * index);
             });
         });
     </script>
