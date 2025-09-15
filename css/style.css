@@ -124,8 +124,12 @@ h6 {
 }
 
 .fa-whatsapp {
+<<<<<<< HEAD
   margin-top: 0px;
   text-align: center;
+=======
+  margin-top: 4px;
+>>>>>>> 50c2c29326515ac16d3c7984e280920656e17464
 }
 
 .tooltip {
@@ -5452,7 +5456,11 @@ textarea.form-control {
   font-weight: 800;
   font-family: var(--text-font);
   color: var(--theme-color-white);
+<<<<<<< HEAD
   background-color: #dbaa27;
+=======
+  background-color: #ffcb6d;
+>>>>>>> 50c2c29326515ac16d3c7984e280920656e17464
   border-radius: 35px;
 }
 
