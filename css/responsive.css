@@ -1,0 +1,44 @@
+@media (max-width: 768px) {
+
+    .last-copyright p {
+        color: white;
+        margin-left: 16px;
+        margin-top: -30px;
+    }
+}
+
+.zaki p {
+    margin-top: -18px;
+    margin-left: 30px;
+    color: var(--theme-color-white);
+    font-size: 17px;
+}
+
+@media (max-width: 768px) {
+   .zaki p {
+    margin-top: -18px;
+    margin-left: 30px;
+    color: var(--theme-color-white);
+    font-size: 17px;
+}
+}
+@media (max-width: 768px) {
+   span {
+    display: inline-block;
+    color: inherit;
+    margin-left: 25px;
+}
+}
+
+@media (max-width: 768px) {
+  
+}
+
+@media (max-width: 768px) {
+  
+}
+
+@media (max-width: 768px) {
+  
+}
+
