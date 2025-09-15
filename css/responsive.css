@@ -7,13 +7,6 @@
     }
 }
 
-.zaki p {
-    margin-top: -18px;
-    margin-left: 30px;
-    color: var(--theme-color-white);
-    font-size: 17px;
-}
-
 @media (max-width: 768px) {
    .zaki p {
     margin-top: -18px;
