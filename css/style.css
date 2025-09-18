@@ -1,4 +1,3 @@
-
 @import url("https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,200..900;1,7..72,200..900&amp;family=Mulish:ital,wght@0,200..1000;1,200..1000&amp;display=swap");
 @import url("meanmenu.css");
 @import url("animate.css");
@@ -30,12 +29,12 @@
   --text-color: #707070;
   --text-color2: #c4c4c4;
   --headings-color: #1c1a1d;
-  --review-color:#dbaa27;
+  --review-color: #dbaa27;
   --link-color: var(--headings-color);
   --link-hover-color: var(--headings-color);
   --title-font: "Literata", serif;
   --text-font: "Mulish", serif;
-  --body-font-size: 16px;
+  --body-font-size: 18px;
   --body-line-height: 1.75;
   --body-font-weight: 400;
   --line-height-heading-h1: 1.2em;
@@ -88,22 +87,25 @@ h6 {
 
 /* new start */
 
-.call-set i{
+.call-set i {
   margin-left: 18px;
 }
-.lal img{
-height: 80px;
-width: 50px;
+
+.lal img {
+  height: 80px;
+  width: 50px;
 }
 
 
 .ddd {
   font-size: 20px;
 }
-.why-chose p{
+
+.why-chose p {
   margin-left: 20px;
 }
-.why-chose h5{
+
+.why-chose h5 {
   margin-left: 15px;
 }
 
@@ -222,16 +224,23 @@ width: 50px;
   display: inline-block;
 }
 
-.muja img{
+.muja img {
   height: 65px;
   width: 85px;
-  ŚŚŚ
+  
+}
+.our-gel h2{
+ 
+    text-align: center;
+    padding-top: 35px;
 }
 
-.diff img{
-      margin-left: -25px;
-    height: 49px;
+
+.diff img {
+  margin-left:-25px;
+  height: 49px;
 }
+
 /* box css  */
 
 .header {
@@ -486,9 +495,10 @@ width: 50px;
 }
 
 
-.prices-list{
+.prices-list {
   margin-left: -20px;
 }
+
 .zaki h3 {
   color: white;
   margin-left: 50px;
@@ -514,13 +524,13 @@ width: 50px;
 
 .last-copyright p {
   color: white;
-  margin-left: 420px;
+  margin-left: 500px;
   margin-top: -30px;
 }
 
 
 .new {
- background-color: #e1aa26;
+  background-color: #e1aa26;
   color: #fff;
   padding: 10px 20px;
   border-radius: 25px;
@@ -534,7 +544,8 @@ width: 50px;
   /* margin-top: 20px; */
   /* text-align: right; */
 }
-.contect-text{
+
+.contect-text {
   font-size: 18px;
 }
 
@@ -619,6 +630,7 @@ h6 {
   font-weight: 500;
   line-height: 28px;
 }
+
 .client-say {
   font-size: 16px;
 
@@ -1460,7 +1472,7 @@ figure {
 }
 
 .pt-120 {
-  padding-top: 20px;
+  padding-top: 50px;
 }
 
 .pt-125 {
@@ -1620,7 +1632,7 @@ figure {
 }
 
 .pb-120 {
-  padding-bottom: 20px;
+  padding-bottom: 80px;
 }
 
 .pb-125 {
@@ -4355,7 +4367,7 @@ figure {
 .btn-two,
 .btn-two-dark,
 .btn-two-light {
-  background-color:#e1aa26;
+  background-color: #e1aa26;
   color: var(--theme-color-white);
 }
 
@@ -5689,7 +5701,7 @@ textarea.form-control {
   transition: all 0.3s;
   font-size: 22px;
   color: var(--theme-color-white);
-  background-color:#e1aa26;
+  background-color: #e1aa26;
   opacity: 1;
   background-image: none;
   transition: all 0.3s;
@@ -5725,7 +5737,7 @@ textarea.form-control {
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
   border: 1px solid rgba(var(--theme-color-white-rgb), 0.1);
-   background-color: #e1aa26;
+  background-color: #e1aa26;
 }
 
 .sidebar__btns {
@@ -9315,7 +9327,7 @@ textarea.form-control {
 .package-block .inner-box .content .title a {
   font-size: 22px;
   white-space: nowrap;
-    margin-right: -70px;
+  margin-right: -70px;
 }
 
 .package-block .inner-box .content .title a:hover {
@@ -9329,10 +9341,10 @@ textarea.form-control {
 }
 
 .package-block .inner-box .content .title .line {
-     width: 100%;
-    height: 1px;
-    background-color: rgba(255, 255, 255, 0);
-    border: hidden;
+  width: 100%;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0);
+  border: hidden;
 
 }
 
@@ -10149,7 +10161,7 @@ textarea.form-control {
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
   border: 5px solid var(--theme-color-gray);
-  background-color:#e1aa26;
+  background-color: #e1aa26;
   position: absolute;
   top: 0;
   right: 0;
@@ -10202,7 +10214,7 @@ textarea.form-control {
 }
 
 .service-block-two .inner-box .arry-icon:hover {
-  background-color:#e1aa26;
+  background-color: #e1aa26;
 }
 
 .service-block-two .inner-box:hover .icon {
@@ -11398,6 +11410,7 @@ textarea.form-control {
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
+  margin-top: 10px;
 }
 
 .footer__item {
@@ -11469,7 +11482,7 @@ textarea.form-control {
   -ms-flex-align: center;
   align-items: center;
   gap: 20px;
-  margin-left:33px;
+  margin-left: 33px;
 }
 
 .footer__item .socials a {
@@ -15744,7 +15757,7 @@ Sidebar
 .contact-details__info li .icon {
   height: 37px;
   width: 37px;
-  background-color:#e1aa26;
+  background-color: #e1aa26;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
