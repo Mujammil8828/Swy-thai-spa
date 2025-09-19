@@ -577,6 +577,8 @@ var THEMEMASCOT = {};
 			},
 		},
 	});
+
+	
 	// Swiper marqee area end here ***
 
 	//Progress Bar
