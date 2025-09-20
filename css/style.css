@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,200..900;1,7..72,200..900&amp;family=Mulish:ital,wght@0,200..1000;1,200..1000&amp;display=swap");
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
 @import url("meanmenu.css");
 @import url("animate.css");
 @import url("jquery.fancybox.min.css");
@@ -32,8 +32,8 @@
   --review-color: #dbaa27;
   --link-color: var(--headings-color);
   --link-hover-color: var(--headings-color);
-  --title-font: "Literata", serif;
-  --text-font: "Mulish", serif;
+  --title-font: "DM Sans", sans-serif;
+  --text-font: "DM Sans", sans-serif;
   --body-font-size: 18px;
   --body-line-height: 1.75;
   --body-font-weight: 400;
@@ -87,12 +87,12 @@ h6 {
 
 /* new start */
 
-.aro-img img{
-  width:80px;
+.aro-img img {
+  width: 80px;
   border-radius: 10px;
 }
 
-.spa-prices{
+.spa-prices {
   display: flex;
   gap: 15px;
   padding-bottom: 50px;
@@ -100,14 +100,14 @@ h6 {
 }
 
 
-.spa-con{
+.spa-con {
   display: flex;
   gap: 20px;
 }
 
 .aroma-link a {
-  color:black;
-  
+  color: black;
+
   font-size: 22px;
 }
 
@@ -118,7 +118,7 @@ h6 {
 
 
 .aroma-link p {
-font-size: 16px;
+  font-size: 16px;
 }
 
 
@@ -259,21 +259,24 @@ font-size: 16px;
   margin-top: 8px;
   padding: 5px 12px;
   display: inline-block;
-};
+}
+
+;
 
 .muja img {
   height: 65px;
   width: 85px;
-  
+
 }
-.our-gel h2{
-    text-align: center;
-    padding-top: 35px;
+
+.our-gel h2 {
+  text-align: center;
+  padding-top: 35px;
 }
 
 
 .diff img {
-  margin-left:-25px;
+  margin-left: -25px;
   height: 49px;
 }
 
@@ -649,7 +652,7 @@ h4 {
 
 @media (max-width: 767px) {
   h4 {
-    font-size: 18px;
+    font-size: 14px;
     line-height: 26px;
   }
 }
@@ -11505,8 +11508,15 @@ textarea.form-control {
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  margin-right: 65px;
+  /* margin-right: 65px; */
   margin-left: 40px;
+  display: block;
+
+}
+
+.time-table span {
+  margin-left: 22px;
+  font-size: 12px;
 }
 
 .footer__item .socials {
@@ -15852,6 +15862,7 @@ Sidebar
   color: var(--notech-black);
   -webkit-transition: all 500ms ease;
   transition: all 500ms ease;
+  display: block;
 }
 
 .contact-details__info li .text span {

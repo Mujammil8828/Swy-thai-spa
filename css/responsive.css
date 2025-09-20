@@ -285,7 +285,9 @@ ease;
     justify-content: space-between;
 }
 
-
+.aroma-link p {
+    font-size: 12px;
+}
 
 
 
