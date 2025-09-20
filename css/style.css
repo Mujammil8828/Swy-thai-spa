@@ -7059,8 +7059,8 @@ textarea.form-control {
 }
 
 .about-section .image-column .inner-column .image-box {
-  -webkit-mask-image: url(../images/about/about-image-mask.png);
-  mask-image: url(../images/about/about-image-mask.png);
+  -webkit-mask-image: url(../img/about/about-image-mask.png);
+  mask-image: url(../img/about/about-image-mask.png);
   -webkit-mask-repeat: no-repeat;
   mask-repeat: no-repeat;
   -webkit-mask-size: cover;
@@ -10178,8 +10178,8 @@ textarea.form-control {
 .service-block-two .inner-box .image-box .image {
   border-radius: 30px;
   overflow: hidden;
-  -webkit-mask-image: url(../images/service/service-two-image-masking.png);
-  mask-image: url(../images/service/service-two-image-masking.png);
+  -webkit-mask-image: url(../img/service/service-two-image-masking.png);
+  mask-image: url(../img/service/service-two-image-masking.png);
   -webkit-mask-repeat: no-repeat;
   mask-repeat: no-repeat;
   -webkit-mask-size: cover;
@@ -11131,8 +11131,8 @@ textarea.form-control {
 .testimonial-block .inner-box .content-box {
   padding: 30px;
   background-color: var(--theme-color-gray2);
-  -webkit-mask-image: url(../images/shape/testimonial-item-mask.png);
-  mask-image: url(../images/shape/testimonial-item-mask.png);
+  -webkit-mask-image: url(../img/shape/testimonial-item-mask.png);
+  mask-image: url(../img/shape/testimonial-item-mask.png);
   -webkit-mask-repeat: no-repeat;
   mask-repeat: no-repeat;
   -webkit-mask-size: cover;
