@@ -4312,6 +4312,7 @@ figure {
   border: 1px solid var(--theme-color1);
   position: relative;
   z-index: 2;
+  margin-bottom: 20px;
 }
 
 .btn-one .icon_box,
