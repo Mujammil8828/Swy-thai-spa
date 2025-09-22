@@ -30,7 +30,7 @@
 
   .section-header .sub-title,
   .section-header__flex .sub-title {
-    font-size: 25px;
+    font-size: 22px;
     line-height: 30px;
     font-weight: 500;
     display: -webkit-box;
@@ -52,12 +52,13 @@
     margin-top: 10px;
     margin-left: 0;
     align-items: center;
-    font-size: 16px;
+    font-size: 18px;
   }
 
   .why-chose h5 {
     margin-left: 0;
     align-items: center;
+    margin-top: 15px;
   }
 
   .why-chose p {
@@ -82,7 +83,7 @@
     -webkit-transition: 0.5s;
     transition: 0.5s;
     background-color: transparent;
-    border: 1px solid var(--theme-color1);
+    border: 1px solid #e1aa26;
     position: relative;
     z-index: 2;
   }
@@ -250,58 +251,82 @@
   }
 
 
-.contact-details__info li .text {
-        margin-left: 50px;
-        margin-top: -40px;
-    }
+  .contact-details__info li .text {
+    margin-left: 50px;
+    margin-top: -40px;
+  }
 
-.contact-details__info li .text a {
+  .contact-details__info li .text a {
     font-size: 18px;
     color: var(--notech-black);
-    -webkit-transition: all 500ms 
-ease;
-    transition: all 500ms 
-ease;
-    display: grid
-;
+    -webkit-transition: all 500ms ease;
+    transition: all 500ms ease;
+    display: grid;
     margin-bottom: 10px;
-}
+  }
 
-.muja img {
+  .muja img {
     height: 100%;
     width: 100%;
-}
+  }
 
-.aroma-link a {
+  .aroma-link a {
     color: black;
     font-size: 16px;
-}
+  }
+
+  .spa-prices {
+    display: flex;
+    gap: 15px;
+    padding-top: 0px;
+    justify-content: space-between;
+  }
+
+  .aroma-link p {
+    font-size: 12px;
+  }
+
+  .btn-two-light:hover {
+    background-color: #e1aa26;
+  }
+
+  .banner__content {
+    padding-top: 100px;
+    padding-bottom: 50px;
+    padding-left: 30px;
+  }
+
+  .btn-two-light .icon_first,
+  .btn-two-light .icon_second {
+    color: #e1aa26 !important;
+  }
 
 .spa-prices {
     display: flex
 ;
     gap: 15px;
-    padding-top: 20px;
+    padding-bottom: 24px;
     justify-content: space-between;
 }
-
-.aroma-link p {
-    font-size: 12px;
+.our-gel h2 {
+    text-align: center;
+    padding-top: 20px;
 }
 
+.section-title h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 25px;
+    color: var(--dark);
+    margin-bottom: 0px;
+}
+.price1 {
+    font-size: 18px;
+    color: #e1aa26;
+}
 
-
-
-
-
-
-
-                                                           
-
-
-
-
-
+.pricing-section {
+    margin-top: 45px;
+}
 
 
 

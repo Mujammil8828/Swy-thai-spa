@@ -3,483 +3,731 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Spa Booking Form</title>
+    <title>Thai Dry Massage | Dream Spa Experience</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --primary: #D4AF8C;
+            --primary-light: #E8D5C4;
+            --secondary: #9AC5C9;
+            --dark: #3A4B4D;
+            --light: #F9F5F3;
+            --transition: all 0.3s ease;
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-        
+
         body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
-            padding: 20px;
+            font-family: 'Poppins', sans-serif;
+            color: #555;
+            background-color: var(--light);
+            overflow-x: hidden;
+            line-height: 1.6;
         }
-        
+
         .container {
-            width: 100%;
-            max-width: 800px;
-            background: white;
-            border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-            padding: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
         }
-        
-        h1 {
-            text-align: center;
-            color: #333;
-            margin-bottom: 20px;
-            font-weight: 600;
-        }
-        
-        .description {
-            text-align: center;
-            color: #666;
-            margin-bottom: 30px;
-            line-height: 1.5;
-        }
-        
-        .row {
-            display: flex;
-            flex-wrap: wrap;
-            margin: -10px;
-        }
-        
-        .col-sm-6 {
-            flex: 0 0 50%;
-            padding: 10px;
-        }
-        
-        input, select, textarea {
-            width: 100%;
-            padding: 15px 20px;
-            font-size: 16px;
-            border: 2px solid #ddd;
-            border-radius: 8px;
-            outline: none;
-            transition: border-color 0.3s;
-        }
-        
-        input:focus, select:focus, textarea:focus {
-            border-color: #4a86e8;
-        }
-        
-        textarea {
-            min-height: 120px;
-            resize: vertical;
-        }
-        
-        .dateTimePicker {
-            position: relative;
-        }
-        
-        .dateTimePicker input {
-            padding-right: 45px;
-        }
-        
-        .dateTimePicker i {
-            position: absolute;
-            right: 15px;
-            top: 50%;
-            transform: translateY(-50%);
-            color: #777;
-            cursor: pointer;
-        }
-        
-        button {
-            display: block;
-            width: 100%;
-            padding: 15px;
-            background: #4a86e8;
-            color: white;
-            border: none;
-            border-radius: 8px;
-            font-size: 18px;
-            font-weight: 600;
-            cursor: pointer;
-            margin-top: 20px;
-            transition: background 0.3s;
-        }
-        
-        button:hover {
-            background: #3a76d8;
-        }
-        
-        .calendar {
-            display: none;
-            background: white;
-            border-radius: 12px;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-            margin-top: 10px;
-            position: absolute;
-            width: 320px;
+
+        /* Header */
+        header {
+            background: rgba(249, 245, 243, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 0;
             z-index: 100;
+            padding: 15px 0;
         }
-        
-        .calendar.active {
-            display: block;
-            animation: fadeIn 0.3s ease;
-        }
-        
-        .calendar-header {
+
+        .header-content {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 15px;
         }
-        
-        .calendar-header button {
-            background: none;
-            border: none;
-            font-size: 18px;
-            cursor: pointer;
-            color: #4a86e8;
-            padding: 5px 10px;
-            border-radius: 5px;
-            width: auto;
-            transition: background 0.3s;
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--dark);
+            text-decoration: none;
         }
-        
-        .calendar-header button:hover {
-            background: #f0f0f0;
+
+        .logo span {
+            color: var(--primary);
         }
-        
-        .calendar-header span {
-            font-weight: 600;
-            font-size: 18px;
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
         }
-        
-        .calendar-grid {
-            display: grid;
-            grid-template-columns: repeat(7, 1fr);
-            gap: 5px;
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+            padding: 8px 0;
         }
-        
-        .calendar-day {
-            text-align: center;
-            font-weight: 600;
-            padding: 10px;
-            color: #555;
+
+        .nav-links a:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: var(--transition);
         }
-        
-        .calendar-date {
-            text-align: center;
-            padding: 10px;
-            cursor: pointer;
-            border-radius: 50%;
-            transition: background 0.3s;
+
+        .nav-links a:hover {
+            color: var(--primary);
         }
-        
-        .calendar-date:hover {
-            background: #e6f0ff;
+
+        .nav-links a:hover:after {
+            width: 100%;
         }
-        
-        .calendar-date.selected {
-            background: #4a86e8;
+
+        .book-btn {
+            background: var(--primary);
             color: white;
+            padding: 12px 25px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
         }
-        
-        .calendar-date.inactive {
-            color: #ccc;
-            cursor: default;
+
+        .book-btn:hover {
+            background: var(--dark);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
         }
-        
-        .time-selector {
-            display: none;
+
+        /* Hero Section */
+        .hero {
+            padding: 100px 0 80px;
+            background: linear-gradient(rgba(58, 75, 77, 0.7), rgba(58, 75, 77, 0.7)), url('https://images.unsplash.com/photo-1544161515-35a0223f8c4f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80') center/cover no-repeat;
+            color: white;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero:before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: linear-gradient(to top, var(--light), transparent);
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 48px;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .breadcrumb {
+            display: flex;
+            justify-content: center;
+            list-style: none;
             margin-top: 20px;
-            padding-top: 20px;
-            border-top: 1px solid #eee;
         }
-        
-        .time-selector.active {
-            display: block;
-            animation: fadeIn 0.5s ease;
+
+        .breadcrumb li {
+            margin: 0 5px;
+            position: relative;
         }
-        
-        .time-selector h3 {
-            text-align: center;
-            margin-bottom: 15px;
-            color: #333;
+
+        .breadcrumb li:not(:last-child):after {
+            content: '/';
+            margin-left: 10px;
+            color: var(--primary-light);
         }
-        
-        .time-slots {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 10px;
+
+        .breadcrumb a {
+            color: var(--primary-light);
+            transition: var(--transition);
+            text-decoration: none;
         }
-        
-        .time-slot {
-            padding: 10px;
-            text-align: center;
-            background: #f8f9fa;
-            border-radius: 6px;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-        
-        .time-slot:hover {
-            background: #e6f0ff;
-        }
-        
-        .time-slot.selected {
-            background: #4a86e8;
+
+        .breadcrumb a:hover {
             color: white;
         }
-        
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(-10px);
+
+        /* Content Section */
+        .content-section {
+            padding: 100px 0;
+            position: relative;
+        }
+
+        .content-section:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect fill="none" width="100" height="100"/><path fill="%23D4AF8C" fill-opacity="0.1" d="M30,30 Q50,10 70,30 T90,50 T70,70 T50,90 T30,70 T10,50 T30,30 Z" /></svg>') repeat;
+            background-size: 300px;
+            opacity: 0.3;
+            z-index: -1;
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .content-image {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            transition: var(--transition);
+        }
+
+        .content-image:hover {
+            transform: translateY(-10px);
+        }
+
+        .content-image img {
+            width: 100%;
+            height: auto;
+            transition: var(--transition);
+        }
+
+        .content-image:hover img {
+            transform: scale(1.05);
+        }
+
+        .content-text h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 36px;
+            color: var(--dark);
+            margin-bottom: 20px;
+        }
+
+        .content-text p {
+            margin-bottom: 25px;
+            line-height: 1.8;
+        }
+
+        .benefits-list {
+            list-style: none;
+            margin-top: 30px;
+        }
+
+        .benefits-list li {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 12px 20px;
+            background: rgba(212, 175, 140, 0.1);
+            border-radius: 10px;
+            margin-bottom: 15px;
+            transition: var(--transition);
+        }
+
+        .benefits-list li:hover {
+            background: rgba(212, 175, 140, 0.2);
+            transform: translateX(5px);
+        }
+
+        .benefits-list i {
+            color: var(--primary);
+            font-size: 20px;
+        }
+
+        /* Pricing Section */
+        .pricing-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, rgba(249, 245, 243, 0.7) 0%, rgba(255, 255, 255, 0.9) 100%);
+            position: relative;
+        }
+
+        .pricing-section:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect fill="none" width="100" height="100"/><path fill="%23D4AF8C" fill-opacity="0.1" d="M30,30 Q50,10 70,30 T90,50 T70,70 T50,90 T30,70 T10,50 T30,30 Z" /></svg>') repeat;
+            background-size: 300px;
+            opacity: 0.3;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 36px;
+            color: var(--dark);
+            margin-bottom: 15px;
+        }
+
+        .section-title p {
+            color: #777;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .pricing-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .pricing-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+            transition: var(--transition);
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.15);
+        }
+
+        .card-header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            padding: 30px;
+            text-align: center;
+            color: white;
+        }
+
+        .card-header h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .card-header p {
+            opacity: 0.9;
+        }
+
+        .card-body {
+            padding: 30px;
+        }
+
+        .price-option {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            border-bottom: 1px solid #f1f1f1;
+        }
+
+        .price-option:last-child {
+            border-bottom: none;
+        }
+
+        .duration {
+            font-size: 18px;
+            color: var(--dark);
+        }
+
+        .price {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .special .card-header {
+            background: linear-gradient(135deg, #FF9E6D 0%, #FF7B89 100%);
+        }
+
+        .card-footer {
+            padding: 0 30px 30px;
+            text-align: center;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 80px 0 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .footer-column h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 22px;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .footer-column h3:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background: var(--primary);
+        }
+
+        .footer-column p {
+            opacity: 0.8;
+            margin-bottom: 25px;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.8);
+            transition: var(--transition);
+            text-decoration: none;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
+            padding-left: 5px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* WhatsApp Float */
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 25px;
+            right: 25px;
+            background: #25D366;
+            color: white;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+            animation: pulse-green 2s infinite;
+        }
+
+        @keyframes pulse-green {
+            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.4); }
+            70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        }
+
+        .whatsapp-float:hover {
+            background: #128C7E;
+            transform: scale(1.1);
+        }
+
+        /* Responsive */
+        @media (max-width: 991px) {
+            .content-grid {
+                grid-template-columns: 1fr;
             }
-            to {
-                opacity: 1;
-                transform: translateY(0);
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 36px;
             }
         }
-        
+
         @media (max-width: 768px) {
-            .col-sm-6 {
-                flex: 0 0 100%;
+            .pricing-cards {
+                grid-template-columns: 1fr;
             }
             
-            .container {
-                padding: 20px;
+            .hero {
+                padding: 80px 0 60px;
             }
             
-            .time-slots {
-                grid-template-columns: repeat(3, 1fr);
+            .content-section, .pricing-section {
+                padding: 60px 0;
             }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Spa Appointment Booking</h1>
-        <p class="description">Fill out the form below to book your relaxing spa experience. We'll confirm your appointment shortly.</p>
-        
-        <form action="#0">
-            <div class="row">
-                <div class="col-sm-6">
-                    <input type="text" placeholder="Name *">
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="#" class="logo">Dream<span>Spa</span></a>
+                <ul class="nav-links">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Gallery</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+                <a href="#" class="book-btn">Book Now <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Thai Dry Massage</h1>
+            <p>Experience the ancient healing art of traditional Thai massage</p>
+            <ul class="breadcrumb">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Services</a></li>
+                <li>Thai Dry Massage</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Content Section -->
+    <section class="content-section">
+        <div class="container">
+            <div class="content-grid">
+                <div class="content-image">
+                    <img src="https://images.unsplash.com/photo-1591348278863-a8fb3887e2aa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80" alt="Thai Dry Massage">
                 </div>
-                <div class="col-sm-6">
-                    <input type="email" placeholder="Email Address *">
+                <div class="content-text">
+                    <h2>What is Thai Dry Massage?</h2>
+                    <p>Thai Dry Massage is an ancient healing system that combines acupressure, Indian Ayurvedic principles, and assisted yoga postures. Unlike other forms of massage, Thai Dry Massage is performed on a mat on the floor with the recipient wearing loose, comfortable clothing.</p>
+                    <p>This unique form of bodywork focuses on energy lines and pressure points throughout the body to release blockages and tension, improve flexibility, and balance the body's energy systems.</p>
+                    
+                    <h3>Benefits of Thai Dry Massage</h3>
+                    <ul class="benefits-list">
+                        <li><i class="fas fa-check-circle"></i> Boosts energy levels and circulation</li>
+                        <li><i class="fas fa-check-circle"></i> Increases flexibility and range of motion</li>
+                        <li><i class="fas fa-check-circle"></i> Reduces stress and promotes relaxation</li>
+                        <li><i class="fas fa-check-circle"></i> Relieves muscle tension and pain</li>
+                        <li><i class="fas fa-check-circle"></i> Improves posture and body alignment</li>
+                        <li><i class="fas fa-check-circle"></i> Enhances mental clarity and focus</li>
+                    </ul>
                 </div>
-                <div class="col-sm-6">
-                    <select class="nice-select" name="#" id="subject">
-                        <option value="0">Select Service *</option>
-                        <option value="2">Aroma Massage</option>
-                        <option value="2">Swedish Massage</option>
-                        <option value="3">Stone Message</option>
-                        <option value="4">Foot Message</option>
-                        <option value="5">Thai Dry Massage</option>
-                        <option value="6">Deep Tissue Massage</option>
-                        <option value="7">Balinese Massage</option>
-                        <option value="8">Body Wrap Massage</option>
-                        <option value="9">Body Scrub Massage</option>
-                    </select>
-                </div>
-                <div class="col-sm-6">
-                    <div class="dateTimePicker">
-                        <input type="text" name="filter-date" id="filter-date"
-                            placeholder="Select Date & Time *" readonly>
-                        <i class="fa-solid fa-calendar-days"></i>
-                        <div class="calendar" id="calendar">
-                            <div class="calendar-header">
-                                <button id="prev-month"><i class="fas fa-chevron-left"></i></button>
-                                <span id="current-month-year">April 2023</span>
-                                <button id="next-month"><i class="fas fa-chevron-right"></i></button>
-                            </div>
-                            <div class="calendar-grid">
-                                <div class="calendar-day">Sun</div>
-                                <div class="calendar-day">Mon</div>
-                                <div class="calendar-day">Tue</div>
-                                <div class="calendar-day">Wed</div>
-                                <div class="calendar-day">Thu</div>
-                                <div class="calendar-day">Fri</div>
-                                <div class="calendar-day">Sat</div>
-                                <!-- Dates will be inserted here by JavaScript -->
-                            </div>
-                            
-                            <div class="time-selector" id="time-selector">
-                                <h3>Select a Time</h3>
-                                <div class="time-slots">
-                                    <div class="time-slot">09:00 AM</div>
-                                    <div class="time-slot">10:00 AM</div>
-                                    <div class="time-slot">11:00 AM</div>
-                                    <div class="time-slot">12:00 PM</div>
-                                    <div class="time-slot">01:00 PM</div>
-                                    <div class="time-slot">02:00 PM</div>
-                                    <div class="time-slot">03:00 PM</div>
-                                    <div class="time-slot">04:00 PM</div>
-                                </div>
-                                <button class="confirm-btn" id="confirm-btn" type="button">Confirm Selection</button>
-                            </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Pricing & Packages</h2>
+                <p>Choose the perfect duration for your Thai Dry Massage experience</p>
+            </div>
+            
+            <div class="pricing-cards">
+                <!-- Regular Pricing -->
+                <div class="pricing-card">
+                    <div class="card-header">
+                        <h3>Thai Dry Massage</h3>
+                        <p>Boosts energy levels and circulation</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="price-option">
+                            <span class="duration">60 Minutes</span>
+                            <span class="price">₹3249/-</span>
                         </div>
+                        <div class="price-option">
+                            <span class="duration">90 Minutes</span>
+                            <span class="price">₹3999/-</span>
+                        </div>
+                        <div class="price-option">
+                            <span class="duration">120 Minutes</span>
+                            <span class="price">₹4999/-</span>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <a href="#" class="book-btn">Book Now <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Special Offers -->
+                <div class="pricing-card special">
+                    <div class="card-header">
+                        <h3>Special Offers</h3>
+                        <p>Limited time special packages for our valued customers</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="price-option">
+                            <span class="duration">60 Minutes</span>
+                            <span class="price">₹1800/-</span>
+                        </div>
+                        <div class="price-option">
+                            <span class="duration">90 Minutes</span>
+                            <span class="price">₹2300/-</span>
+                        </div>
+                        <div class="price-option">
+                            <span class="duration">120 Minutes</span>
+                            <span class="price">₹2800/-</span>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <a href="#" class="book-btn">Book Now <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
             </div>
-            <textarea name="masage" id="masage"
-                placeholder="Write a Message"></textarea>
-            <button type="submit">Book Now</button>
-        </form>
-    </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Dream Spa</h3>
+                    <p>Where relaxation meets rejuvenation. Experience the ultimate in wellness and beauty treatments in a tranquil environment.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Services</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Gallery</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Thai Dry Massage</a></li>
+                        <li><a href="#">Aroma Massage</a></li>
+                        <li><a href="#">Hot Stone Massage</a></li>
+                        <li><a href="#">Body Wrap Treatment</a></li>
+                        <li><a href="#">Foot Massage</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Spa Street, Relaxation City</li>
+                        <li><i class="fas fa-phone"></i> +91 9876543210</li>
+                        <li><i class="fas fa-envelope"></i> info@dreamspa.com</li>
+                        <li><i class="fas fa-clock"></i> Open: 10:00 AM - 10:00 PM</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 Dream Spa. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float -->
+    <a href="https://wa.me/919876543210" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
 
     <script>
+        // Simple animation for page elements
         document.addEventListener('DOMContentLoaded', function() {
-            const dateInput = document.getElementById('filter-date');
-            const calendarIcon = document.querySelector('.fa-calendar-days');
-            const calendar = document.getElementById('calendar');
-            const prevMonthBtn = document.getElementById('prev-month');
-            const nextMonthBtn = document.getElementById('next-month');
-            const currentMonthYear = document.getElementById('current-month-year');
-            const timeSelector = document.getElementById('time-selector');
-            const confirmBtn = document.getElementById('confirm-btn');
+            // Animate elements on scroll
+            const animatedElements = document.querySelectorAll('.content-image, .pricing-card, .content-text');
             
-            let currentDate = new Date();
-            let selectedDate = null;
-            let selectedTime = null;
-            
-            // Initialize calendar
-            renderCalendar(currentDate);
-            
-            // Toggle calendar visibility
-            calendarIcon.addEventListener('click', function(e) {
-                e.stopPropagation();
-                calendar.classList.toggle('active');
-                if (calendar.classList.contains('active')) {
-                    timeSelector.classList.remove('active');
-                }
-            });
-            
-            dateInput.addEventListener('click', function() {
-                calendar.classList.toggle('active');
-                if (calendar.classList.contains('active')) {
-                    timeSelector.classList.remove('active');
-                }
-            });
-            
-            // Month navigation
-            prevMonthBtn.addEventListener('click', function() {
-                currentDate.setMonth(currentDate.getMonth() - 1);
-                renderCalendar(currentDate);
-            });
-            
-            nextMonthBtn.addEventListener('click', function() {
-                currentDate.setMonth(currentDate.getMonth() + 1);
-                renderCalendar(currentDate);
-            });
-            
-            // Time slot selection
-            document.querySelectorAll('.time-slot').forEach(slot => {
-                slot.addEventListener('click', function() {
-                    document.querySelectorAll('.time-slot').forEach(s => s.classList.remove('selected'));
-                    this.classList.add('selected');
-                    selectedTime = this.textContent;
-                });
-            });
-            
-            // Confirm selection
-            confirmBtn.addEventListener('click', function() {
-                if (selectedDate && selectedTime) {
-                    dateInput.value = `${selectedDate} ${selectedTime}`;
-                    calendar.classList.remove('active');
-                } else if (selectedDate) {
-                    // If no time selected, just use the date
-                    dateInput.value = selectedDate;
-                    calendar.classList.remove('active');
-                }
-            });
-            
-            // Render calendar function
-            function renderCalendar(date) {
-                const year = date.getFullYear();
-                const month = date.getMonth();
-                
-                currentMonthYear.textContent = `${getMonthName(month)} ${year}`;
-                
-                const firstDay = new Date(year, month, 1);
-                const lastDay = new Date(year, month + 1, 0);
-                const daysInMonth = lastDay.getDate();
-                const startDay = firstDay.getDay();
-                
-                // Clear previous dates
-                const calendarGrid = document.querySelector('.calendar-grid');
-                while (calendarGrid.children.length > 7) {
-                    calendarGrid.removeChild(calendarGrid.lastChild);
-                }
-                
-                // Add inactive dates from previous month
-                for (let i = 0; i < startDay; i++) {
-                    const prevMonthDay = new Date(year, month, 0 - i);
-                    const dateElement = document.createElement('div');
-                    dateElement.classList.add('calendar-date', 'inactive');
-                    dateElement.textContent = prevMonthDay.getDate();
-                    calendarGrid.appendChild(dateElement);
-                }
-                
-                // Add current month dates
-                for (let i = 1; i <= daysInMonth; i++) {
-                    const dateElement = document.createElement('div');
-                    dateElement.classList.add('calendar-date');
-                    dateElement.textContent = i;
-                    
-                    // Highlight today's date
-                    const today = new Date();
-                    if (i === today.getDate() && month === today.getMonth() && year === today.getFullYear()) {
-                        dateElement.classList.add('selected');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = 1;
+                        entry.target.style.transform = 'translateY(0)';
                     }
-                    
-                    dateElement.addEventListener('click', function() {
-                        document.querySelectorAll('.calendar-date').forEach(d => d.classList.remove('selected'));
-                        this.classList.add('selected');
-                        
-                        selectedDate = `${i} ${getMonthName(month)} ${year}`;
-                        
-                        // Show time selector after a short delay
-                        setTimeout(() => {
-                            timeSelector.classList.add('active');
-                        }, 300);
-                    });
-                    
-                    calendarGrid.appendChild(dateElement);
-                }
-                
-                // Calculate how many inactive dates to add for next month
-                const totalCells = 42; // 6 rows x 7 columns
-                const remainingCells = totalCells - (startDay + daysInMonth);
-                
-                // Add inactive dates from next month
-                for (let i = 1; i <= remainingCells; i++) {
-                    const dateElement = document.createElement('div');
-                    dateElement.classList.add('calendar-date', 'inactive');
-                    dateElement.textContent = i;
-                    calendarGrid.appendChild(dateElement);
-                }
-            }
+                });
+            }, { threshold: 0.1 });
             
-            function getMonthName(monthIndex) {
-                const months = [
-                    'January', 'February', 'March', 'April', 'May', 'June',
-                    'July', 'August', 'September', 'October', 'November', 'December'
-                ];
-                return months[monthIndex];
-            }
-            
-            // Close calendar when clicking outside
-            document.addEventListener('click', function(event) {
-                if (!event.target.closest('.dateTimePicker') && calendar.classList.contains('active')) {
-                    calendar.classList.remove('active');
-                }
+            animatedElements.forEach(el => {
+                el.style.opacity = 0;
+                el.style.transform = 'translateY(20px)';
+                el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                observer.observe(el);
             });
+            
+            // Preloader simulation
+            setTimeout(function() {
+                document.getElementById('preloader').style.display = 'none';
+            }, 1500);
         });
     </script>
+
+    <!-- Preloader (simulated) -->
+    <div id="preloader" style="position:fixed; top:0; left:0; width:100%; height:100%; background:#F9F5F3; display:flex; justify-content:center; align-items:center; z-index:9999;">
+        <div style="text-align:center;">
+            <div style="width:60px; height:60px; border:4px solid #E8D5C4; border-top:4px solid #D4AF8C; border-radius:50%; animation: spin 1s linear infinite; margin:0 auto 20px;"></div>
+            <p>Loading Dream Spa Experience...</p>
+        </div>
+    </div>
 </body>
 </html>
+

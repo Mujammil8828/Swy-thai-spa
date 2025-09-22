@@ -899,3 +899,31 @@ var THEMEMASCOT = {};
 	}
 	// WOW Animatin area start here ***
 })(window.jQuery);
+
+        // Simple animation for page elements
+        document.addEventListener('DOMContentLoaded', function () {
+            // Animate elements on scroll
+            const animatedElements = document.querySelectorAll('.content-image, .pricing-card, .content-text');
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = 1;
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            animatedElements.forEach(el => {
+                el.style.opacity = 0;
+                el.style.transform = 'translateY(20px)';
+                el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                observer.observe(el);
+            });
+
+            // Preloader simulation
+            setTimeout(function () {
+                document.getElementById('preloader').style.display = 'none';
+            }, 1500);
+        });
+   
