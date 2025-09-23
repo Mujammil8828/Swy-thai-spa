@@ -182,7 +182,7 @@
                     </li>
 
                     <li>
-                        <a href="https://www.instagram.com/accounts/login/?next=%2Fswythaispa%2F&source=omni_redirect"
+                        <a href="https://www.instagram.com/swythaispa/?igsh=MXU0cDdxZzB4a2x2YQ%3D%3D#"
                             class="social-icon instagram">
                             <i class="fa-brands fa-instagram"></i>
                         </a>
@@ -423,7 +423,7 @@
                                         <i class="fa-brands fa-facebook-f"></i>
                                     </a>
 
-                                    <a href="https://www.instagram.com/accounts/login/?next=%2Fswythaispa%2F&source=omni_redirect"
+                                    <a href="https://www.instagram.com/swythaispa/?igsh=MXU0cDdxZzB4a2x2YQ%3D%3D#"
                                         class="social-icon instagram">
                                         <i class="fa-brands fa-instagram"></i>
                                     </a>
@@ -516,98 +516,31 @@
   <!-- Mean menu Js -->
   <script src="js/meanmenu.js"></script>
   <!-- Swiper bundle min Js -->
-  <script src="js/swiper-bundle.min.js"></script>
+  <!-- <script src="js/swiper-bundle.min.js"></script> -->
   <!-- Counterup min Js -->
-  <script src="js/jquery.counterup.min.js"></script>
+  <!-- <script src="js/jquery.counterup.min.js"></script> -->
   <!-- Datetimepicker min Js -->
-  <script src="js/jquery.datetimepicker.full.min.js"></script>
+  <!-- <script src="js/jquery.datetimepicker.full.min.js"></script> -->
   <!-- Wow min Js -->
-  <script src="js/wow.min.js"></script>
+  <!-- <script src="js/wow.min.js"></script> -->
   <!-- Fancybox Js -->
-  <script src="js/jquery.fancybox.js"></script>
+  <!-- <script src="js/jquery.fancybox.js"></script> -->
   <!-- Nice select min Js -->
-  <script src="js/nice-select.min.js"></script>
+  <!-- <script src="js/nice-select.min.js"></script> -->
   <!-- Parallax Js -->
-  <script src="js/parallax.js"></script>
+  <!-- <script src="js/parallax.js"></script> -->
   <!-- Splitting Js -->
-  <script src="js/splitting.js"></script>
+  <!-- <script src="js/splitting.js"></script> -->
   <!-- Vanilla Tilt Js -->
-  <script src="js/vanilla-tilt.js"></script>
+  <!-- <script src="js/vanilla-tilt.js"></script> -->
   <!-- Waypoints Js -->
-  <script src="js/jquery.waypoints.js"></script>
+  <!-- <script src="js/jquery.waypoints.js"></script> -->
   <!-- Gsap -->
-  <script src="js/gsap/gsap.min.js"></script>
+  <!-- <script src="js/gsap/gsap.min.js"></script>
   <script src="js/gsap/ScrollTrigger.min.js"></script>
-  <script src="js/gsap/ScrollSmoother.min.js"></script>
+  <script src="js/gsap/ScrollSmoother.min.js"></script> -->
   <!-- Script Js -->
 
-
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      const durationTabs = document.querySelectorAll('.duration-tab');
-      const priceOptions = document.querySelectorAll('.price-option');
-
-      // Set first price option as active by default
-      document.querySelectorAll('.prices').forEach(priceContainer => {
-        const firstOption = priceContainer.querySelector('.price-option');
-        if (firstOption) firstOption.classList.add('active');
-      });
-
-      // Duration tab selection
-      durationTabs.forEach(tab => {
-        tab.addEventListener('click', function () {
-          const duration = this.getAttribute('data-duration');
-
-          // Update active tab
-          durationTabs.forEach(t => t.classList.remove('active'));
-          this.classList.add('active');
-
-          // Update active price option for each service
-          document.querySelectorAll('.prices').forEach(priceContainer => {
-            const options = priceContainer.querySelectorAll('.price-option');
-            options.forEach(option => {
-              option.classList.remove('active');
-              if (option.getAttribute('data-duration') === duration) {
-                option.classList.add('active');
-              }
-            });
-          });
-        });
-      });
-
-      // Price option selection
-      priceOptions.forEach(option => {
-        option.addEventListener('click', function () {
-          const duration = this.getAttribute('data-duration');
-          const parent = this.closest('.prices');
-
-          // Update active option within the same service
-          parent.querySelectorAll('.price-option').forEach(opt => {
-            opt.classList.remove('active');
-          });
-          this.classList.add('active');
-
-          // Update duration tabs
-          durationTabs.forEach(tab => {
-            tab.classList.remove('active');
-            if (tab.getAttribute('data-duration') === duration) {
-              tab.classList.add('active');
-            }
-          });
-        });
-      });
-
-      // Book button animation
-      const bookBtn = document.querySelector('.btn-book');
-      bookBtn.addEventListener('click', function () {
-        this.textContent = 'Booking...';
-        setTimeout(() => {
-          this.textContent = 'Book Now';
-          alert('Thank you for your interest! In a real application, this would redirect to a booking page.');
-        }, 1500);
-      });
-    });
-  </script>
   <script src="js/script.js"></script>
 
 </body>

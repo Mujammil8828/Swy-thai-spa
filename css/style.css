@@ -114,6 +114,40 @@ h6 {
  cursor: pointer;
   box-shadow: 0 10px 20px rgba(150, 43, 43, 0.1);
 }
+/* date time  */
+.dateTimePicker {
+    position: relative;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.dateTimePicker input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    background-color: #fff;
+    cursor: pointer;
+    color: #333;
+}
+
+.dateTimePicker input::placeholder {
+    color: #666;
+    font-style: italic;
+}
+
+.dateTimePicker .fa-calendar-days {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #666;
+    font-size: 16px;
+    pointer-events: none;
+}
+
+
 
 /* Pricing Section */
 .pricing-section {
@@ -348,6 +382,7 @@ h6 {
 
 .why-chose h5 {
   margin-left: 15px;
+  margin-top: 14px;
 }
 
 /* floating whatsapp icon  */
@@ -823,16 +858,16 @@ h1 {
 }
 
 h2 {
-  font-size: 55px;
-  font-weight: 300;
-  line-height: 65px;
+     font-size: 30px;
+    font-weight: 300;
+    line-height: 65px;
 }
-
 @media (max-width: 767px) {
   h2 {
-    font-size: 22px;
-    /* line-height: 40px;g */
-    font-weight: 600;
+   font-size: 22px;
+        font-weight: 600;
+        margin-top: -13px;
+        margin-bottom: -10px;
   }
 }
 
@@ -1177,7 +1212,7 @@ figure {
 }
 
 .mb-50 {
-  margin-bottom: 50px;
+  margin-bottom:7px;
 }
 
 .mb-55 {
@@ -2768,7 +2803,7 @@ figure {
   gap: 10px;
   text-transform: capitalize;
   color: black;
-  margin-left: 15px;
+  margin-left: 20px;
 }
 
 .section-header .title,
@@ -4509,7 +4544,7 @@ figure {
   font-weight: 600;
   color: #e1aa26;
   text-transform: capitalize;
-  padding: 16px 30px;
+ padding: 8px 14px;
   border-radius: 30px;
   line-height: 1;
   -webkit-transition: 0.5s;
@@ -4613,8 +4648,8 @@ figure {
 .btn-two,
 .btn-two-dark,
 .btn-two-light {
-  background-color: #e1aa26;
-  color: var(--theme-color-white);
+  /* background-color: #e1aa26; */
+  color:#e1aa26;
 }
 
 .btn-two .icon_first,
@@ -4629,7 +4664,7 @@ figure {
 .btn-two:hover,
 .btn-two-dark:hover,
 .btn-two-light:hover {
-  background-color: var(--theme-color2);
+  background-color: #e1aa26;
   border: 1px solid transparent;
 }
 
@@ -16033,10 +16068,12 @@ Sidebar
 
 .contact-details__info li .icon span {
   color: var(--theme-color-light);
-  font-size: 25px;
+  font-size: 20px;
   -webkit-transition: all 500ms ease;
   transition: all 500ms ease;
+  margin-left: 6px;
 }
+
 
 .contact-details__info li:hover .icon {
   background-color: var(--theme-color2);
@@ -16070,7 +16107,7 @@ Sidebar
 }
 
 .contact-details__info li .text a {
-  font-size: 18px;
+  font-size: 16px;
   color: var(--notech-black);
   -webkit-transition: all 500ms ease;
   transition: all 500ms ease;
@@ -16078,7 +16115,7 @@ Sidebar
 }
 
 .contact-details__info li .text span {
-  font-size: 20px;
+  font-size: 16px;
   color: var(--notech-black);
 }
 

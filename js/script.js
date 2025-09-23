@@ -578,7 +578,7 @@ var THEMEMASCOT = {};
 		},
 	});
 
-	
+
 	// Swiper marqee area end here ***
 
 	//Progress Bar
@@ -594,12 +594,12 @@ var THEMEMASCOT = {};
 	if ($(".count-bar").length) {
 		$(".count-bar").appear(
 			function () {
-					var el = $(this);
-					var percent = el.data("percent");
-					$(el).css("width", percent).addClass("counted");
-				}, {
-					accY: -50
-			}
+				var el = $(this);
+				var percent = el.data("percent");
+				$(el).css("width", percent).addClass("counted");
+			}, {
+			accY: -50
+		}
 		);
 	}
 
@@ -626,8 +626,8 @@ var THEMEMASCOT = {};
 
 	// Hover add & remove js area start here ***
 	$(".hover-item").on("mouseenter", function () {
-	    $(".hover-item").removeClass("active");
-	    $(this).addClass("active");
+		$(".hover-item").removeClass("active");
+		$(this).addClass("active");
 	});
 	// Hover add & remove js area end here ***
 
@@ -682,15 +682,15 @@ var THEMEMASCOT = {};
 	//Fact Counter + Text Count
 	if ($('.product-details .bxslider').length) {
 		$('.product-details .bxslider').bxSlider({
-        nextSelector: '.product-details #slider-next',
-        prevSelector: '.product-details #slider-prev',
-        nextText: '<i class="fa fa-angle-right"></i>',
-        prevText: '<i class="fa fa-angle-left"></i>',
-        mode: 'fade',
-        auto: 'true',
-        speed: '700',
-        pagerCustom: '.product-details .slider-pager .thumb-box'
-    });
+			nextSelector: '.product-details #slider-next',
+			prevSelector: '.product-details #slider-prev',
+			nextText: '<i class="fa fa-angle-right"></i>',
+			prevText: '<i class="fa fa-angle-left"></i>',
+			mode: 'fade',
+			auto: 'true',
+			speed: '700',
+			pagerCustom: '.product-details .slider-pager .thumb-box'
+		});
 	};
 
 	//Distance Range Slider
@@ -709,35 +709,35 @@ var THEMEMASCOT = {};
 	}
 
 	//Price Range Slider
-	if($('.price-range-slider').length){
-		$( ".price-range-slider" ).slider({
+	if ($('.price-range-slider').length) {
+		$(".price-range-slider").slider({
 			range: true,
 			min: 10,
 			max: 99,
-			values: [ 10, 60 ],
-			slide: function( event, ui ) {
-			$( "input.property-amount" ).val( ui.values[ 0 ] + " - " + ui.values[ 1 ] );
+			values: [10, 60],
+			slide: function (event, ui) {
+				$("input.property-amount").val(ui.values[0] + " - " + ui.values[1]);
 			}
 		});
-		
-		$( "input.property-amount" ).val( $( ".price-range-slider" ).slider( "values", 0 ) + " - $" + $( ".price-range-slider" ).slider( "values", 1 ) );	
+
+		$("input.property-amount").val($(".price-range-slider").slider("values", 0) + " - $" + $(".price-range-slider").slider("values", 1));
 	}
 
-  $(".quantity-box .add").on("click", function () {
-    if ($(this).prev().val() < 999) {
-      $(this)
-        .prev()
-        .val(+$(this).prev().val() + 1);
-    }
-  });
-  $(".quantity-box .sub").on("click", function () {
-    if ($(this).next().val() > 1) {
-      if ($(this).next().val() > 1)
-        $(this)
-        .next()
-        .val(+$(this).next().val() - 1);
-    }
-  });
+	$(".quantity-box .add").on("click", function () {
+		if ($(this).prev().val() < 999) {
+			$(this)
+				.prev()
+				.val(+$(this).prev().val() + 1);
+		}
+	});
+	$(".quantity-box .sub").on("click", function () {
+		if ($(this).next().val() > 1) {
+			if ($(this).next().val() > 1)
+				$(this)
+					.next()
+					.val(+$(this).next().val() - 1);
+		}
+	});
 
 	// Background image area start here ***
 	$("[data-background").each(function () {
@@ -816,8 +816,8 @@ var THEMEMASCOT = {};
 			for (let i = 1; i <= lastDate; i++) {
 				const isToday =
 					i === date.getDate() &&
-					month === new Date().getMonth() &&
-					year === new Date().getFullYear()
+						month === new Date().getMonth() &&
+						year === new Date().getFullYear()
 						? "active"
 						: "";
 				lit += `<li class="${isToday}">${i}</li>`;
@@ -871,8 +871,8 @@ var THEMEMASCOT = {};
 	// Nice seclect area end here ***
 
 	//Gallery Filters
-	if($('.filter-list').length){
-	 	$('.filter-list').mixItUp({});
+	if ($('.filter-list').length) {
+		$('.filter-list').mixItUp({});
 	}
 
 	// Scroll to a Specific Div
@@ -900,11 +900,21 @@ var THEMEMASCOT = {};
 	// WOW Animatin area start here ***
 })(window.jQuery);
 
+flatpickr("#filter-date", {
+	enableTime: true,
+	dateFormat: "Y-m-d H:i",
+	time_24hr: true,
+	minuteIncrement: 1,
+	enableSeconds: false,
+	placeholder: "Select Date & Time *"
+});
+
+
         // Simple animation for page elements
-        document.addEventListener('DOMContentLoaded', function () {
+        document.addEventListener('DOMContentLoaded', function() {
             // Animate elements on scroll
             const animatedElements = document.querySelectorAll('.content-image, .pricing-card, .content-text');
-
+            
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
@@ -913,17 +923,17 @@ var THEMEMASCOT = {};
                     }
                 });
             }, { threshold: 0.1 });
-
+            
             animatedElements.forEach(el => {
                 el.style.opacity = 0;
                 el.style.transform = 'translateY(20px)';
                 el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
                 observer.observe(el);
             });
-
+            
             // Preloader simulation
-            setTimeout(function () {
+            setTimeout(function() {
                 document.getElementById('preloader').style.display = 'none';
             }, 1500);
         });
-   
+    
